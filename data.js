@@ -240,5 +240,14 @@ const SITE_DATA = {
     { name: "Dr. Jonathan Barratt", role: "Chief Executive Officer, CelsiusPro (Aust) Pty Ltd, Sydney, Australia" },
     { name: "Dr. Jenny Wang", role: "Senior Lecturer in Finance, School of Business, USQ, Australia" },
     { name: "Prof. Shahbaz Mushtaq", role: "Professor, Agricultural Economics & Climate Finance, Centre for Applied Climate Sciences, USQ, Australia" }
+  ],
+
+  // Shown in the animated stats strip under the hero. Derived from the
+  // arrays above where possible — edit freely, these are just headline numbers.
+  stats: [
+    { value: 7, suffix: "", label: "Publications" },
+    { value: 3, suffix: "", label: "Countries worked in" },
+    { value: 9, suffix: "", label: "Roles held since 2017" },
+    { value: 2, suffix: "", label: "Wheatbelt regions studied" }
   ]
 };

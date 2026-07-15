@@ -220,7 +220,112 @@
   `).join('');
 })();
 
-// ===== Service, awards, memberships, academic exchanges, referees =====
+// ===== Stats strip (animated count-up, runs once when scrolled into view) =====
+(function renderStats() {
+  const root = document.getElementById('statsStrip');
+  if (!root || !SITE_DATA.stats) return;
+
+  root.innerHTML = SITE_DATA.stats.map((s, i) => `
+    <div class="stat">
+      <span class="stat-value" data-target="${s.value}" data-suffix="${s.suffix || ''}">0${s.suffix || ''}</span>
+      <span class="stat-label">${s.label}</span>
+    </div>
+  `).join('');
+
+  function animateCount(el) {
+    const target = Number(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 900;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        root.querySelectorAll('.stat-value').forEach(animateCount);
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  io.observe(root);
+})();
+
+// ===== Scroll reveal for section headers and cards =====
+(function scrollReveal() {
+  const targets = document.querySelectorAll('.reveal');
+  if (!targets.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach((t) => t.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach((t) => io.observe(t));
+})();
+
+// ===== Scrollspy: highlight the active nav link as sections pass =====
+(function scrollspy() {
+  const navLinks = document.querySelectorAll('.site-nav a, .site-nav-mobile a');
+  const sections = Array.from(navLinks)
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = `#${entry.target.id}`;
+        navLinks.forEach((a) => {
+          a.classList.toggle('is-current', a.getAttribute('href') === id);
+        });
+      }
+    });
+  }, { threshold: 0, rootMargin: '-45% 0px -50% 0px' });
+
+  sections.forEach((s) => io.observe(s));
+})();
+
+// ===== Index strip: hover tooltip showing a synthetic year + severity =====
+(function indexStripTooltip() {
+  const strip = document.getElementById('indexStrip');
+  if (!strip) return;
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'index-tooltip';
+  tooltip.hidden = true;
+  document.body.appendChild(tooltip);
+
+  const startYear = 1991;
+
+  strip.addEventListener('mousemove', (e) => {
+    const seg = e.target.closest('span');
+    if (!seg) return;
+    const index = Array.from(strip.children).indexOf(seg);
+    const year = startYear + index;
+    tooltip.textContent = `${year}`;
+    tooltip.style.left = `${e.clientX}px`;
+    tooltip.style.top = `${strip.getBoundingClientRect().bottom + 6}px`;
+    tooltip.hidden = false;
+  });
+  strip.addEventListener('mouseleave', () => { tooltip.hidden = true; });
+})();
 (function renderService() {
   const awards = document.getElementById('awardsList');
   const service = document.getElementById('serviceList');
