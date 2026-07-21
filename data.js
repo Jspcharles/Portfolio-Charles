@@ -12,11 +12,11 @@ const SITE = {
     lastName: "Joseph",
     status: "Open to PhD collaborations & data roles",
     tagline: "Researcher · Data Scientist · Builder",
-    heroBio: "I spent years teaching computer science and keeping campus systems running. Then I moved into explainable AI for climate risk. Now I build models that have to earn a farmer's trust, not just a benchmark score.",
+    heroBio: "I started my career as a software engineer in web development, building reliable and user-focused applications. I then spent several years teaching computer science and managing campus IT infrastructure. Later, I worked as an Ads Quality Analyst, evaluating search and advertising systems for relevance, accuracy, and user experience. Today, my research focuses on explainable AI for climate risk, where I develop transparent and trustworthy machine learning systems for real-world decision-making..",
     aboutBio: [
       "I'm a PhD candidate in Information Systems at the University of Southern Queensland, working on explainable deep learning for drought risk — specifically, how to close the gap between what a weather-index insurance policy pays out and what a farmer actually loses. My thesis is called \u201cDeep Learning the Drought: Explainable AI Approaches for Reducing Basis Risk in Weather Index Insurance for Agribusiness.\u201d",
-      "Before the PhD, my path wasn't a straight line into AI. I taught undergraduate computer science at Sabaragamuwa University of Sri Lanka, ran the learning management system for an entire faculty, and later worked in Germany reviewing ad-compliance systems at Eyeo. Somewhere in there I also built emotion-classification models for folk music, because I was curious whether a neural network could hear what I heard.",
-      "That mix — classroom, infrastructure, industry, research — is why I care more about whether a model can be trusted and understood than whether it tops a leaderboard. Most of my current work lives in the Queensland and Western Australian wheatbelts, using SPI/SPEI drought indices, SHAP, and attention weights to make yield predictions that a farmer, an insurer, or a regulator could actually interrogate.",
+      "Before the PhD, my path wasn't a straight line into AI. I taught undergraduate computer science at Sabaragamuwa University of Sri Lanka, ran the learning management system for an entire faculty, and later worked in Germany reviewing ad-compliance systems at Eyeo. In the midle of journey of my bachelor's time, I also built emotion-classification models for folk music, because I was curious whether a neural network could hear what I heard.",
+      "That mix — classroom, infrastructure, industry, research — is why I care more about whether a model can be trusted and understood than whether it tops a leaderboard. Most of my current work lives in the Queensland and Western Australian climate and wheatbelts, using SPI/SPEI drought indices, SHAP, and attention weights to make yield predictions that a farmer, an insurer, or a regulator could actually interrogate.",
       "Outside of papers and pipelines, I've picked up a working habit of saying yes to things slightly outside my lane — a quantum computing summer school, a robotics lab in Germany, a hackathon pitch competition — mostly because the intersection of fields is usually where the interesting problems hide."
     ],
     email: "charles.joseph@unisq.edu.au",
@@ -265,7 +265,8 @@ const SITE = {
 
   // Awards, summer schools, visiting research, certificates, memberships — one feed.
   milestones: [
-    { year: 2026, type: "Exchange", text: "Participant, Quantum Computing Summer School — RMIT School of Computing Technologies & CSIRO Data61 Quantum Systems Team" },
+    { year: 2026, type: "Summer School", text: "Participant, Climate Change AI Virtual Summer School" },
+    { year: 2026, type: "Summer School", text: "Participant, Quantum Computing Summer School — RMIT School of Computing Technologies & CSIRO Data61 Quantum Systems Team" },
     { year: 2025, type: "Award", text: "First Place Winner, Innovation Challenges Pitch Competition — Study Queensland" },
     { year: 2025, type: "Award", text: "Participant, Adaptive Hackathon — Study Queensland & Dept. of Primary Industries (DPI)" },
     { year: 2024, type: "Exchange", text: "Visiting Researcher, Assistive Intelligent Robotics Lab (AIROB) — FAU Erlangen-N\u00fcrnberg, Germany" },
