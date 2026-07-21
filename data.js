@@ -168,7 +168,7 @@ const SITE = {
   techStack: [
     {
       group: "Languages",
-      items: ["python", "javascript", "typescript", "c", "cplusplus", "kotlin", "html5", "css3", "gnubash"]
+      items: ["python", "javascript", "typescript", "c", "cplusplus", "kotlin", "html5", "css3"]
     },
     {
       group: "Frameworks & Web",
