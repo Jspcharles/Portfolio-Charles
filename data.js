@@ -11,7 +11,7 @@ const SITE = {
     firstName: "Charles",
     lastName: "Joseph",
     status: "Open to PhD collaborations & data roles",
-    tagline: "Researcher · Data Scientist · Builder",
+    tagline: "Researcher · Climate Scientist · Builder",
     heroBio: "I started my career as a software engineer in web development, building reliable and user-focused applications. I then spent several years teaching computer science and managing campus IT infrastructure before working as an Ads Quality Analyst, evaluating search and advertising systems. Today, my research focuses on explainable AI for climate risk, where I develop transparent and trustworthy machine learning systems for real-world decision-making.",
     aboutBio: [
       "I'm a PhD candidate in Information Systems at the University of Southern Queensland, working on explainable deep learning for drought risk — specifically, how to close the gap between what a weather-index insurance policy pays out and what a farmer actually loses. My thesis is called \u201cDeep Learning the Drought: Explainable AI Approaches for Reducing Basis Risk in Weather Index Insurance for Agribusiness.\u201d",
@@ -138,7 +138,7 @@ const SITE = {
       tags: ["Google Earth Engine", "Drought monitoring", "Interactive map", "GIS", "html5", "javascript"],
       github: "https://github.com/Jspcharles/Drought_QLD",
       cover: "contour",
-      image: "images/drought_qld_fig.png"
+      image: "images\\projects\\drought_qld_fig.png"
     },
     {
       name: "DeepYield-ResNet",
